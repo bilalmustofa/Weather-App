@@ -1,7 +1,7 @@
-# Weather-App
+## Weather-App
 This project is a basic responsive weather application built with HTML, CSS, and JavaScript that allows users to search for any city and view current weather information using an external API.
 
-## Features
+# Features
 -  Search weather by city name
 -  Real-time temperature display
 -  Humidity information
@@ -10,4 +10,4 @@ This project is a basic responsive weather application built with HTML, CSS, and
 -  Weather icons integration
 -  Fully responsive design (mobile & desktop)
 
-## Live Demo https://bilalmustofa.github.io/Weather-App/
+ Live Demo https://bilalmustofa.github.io/Weather-App/

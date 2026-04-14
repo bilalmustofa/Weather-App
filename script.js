@@ -27,6 +27,7 @@ async function getWeatherData(cityValue) {
         const temperature = Math.round(data.main.temp);
         const description = data.weather[0].description;
         const icon = data.weather[0].icon;
+        const cityName = cityValue;
         const details = [
             `Feels like: ${Math.round(data.main.feels_like)}℃`,
             `Humidity: ${data.main.humidity}%`,
@@ -34,9 +35,11 @@ async function getWeatherData(cityValue) {
         ];
         // Display data
         weatherDataEl.querySelector('.icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">`;
+        weatherDataEl.querySelector('.city-name').textContent = `${cityName}`;
         weatherDataEl.querySelector('.temperature').textContent = `${temperature}℃`;
         weatherDataEl.querySelector('.description').textContent = `${description}`;
         weatherDataEl.querySelector('.details').innerHTML = details.map((detail) => `<div>${detail}</div>`).join('');
+        cityInputEl.value = "";
     } catch (error) {
         console.error(error);
         showError("Unable to get weather data");

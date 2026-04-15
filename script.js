@@ -39,7 +39,7 @@ async function getWeatherData(cityValue) {
         weatherDataEl.querySelector('.temperature').textContent = `${temperature}℃`;
         weatherDataEl.querySelector('.description').textContent = `${description}`;
         weatherDataEl.querySelector('.details').innerHTML = details.map((detail) => `<div>${detail}</div>`).join('');
-        cityInputEl.value = "";
+        cityInputEl.value = ""; // clear input field
     } catch (error) {
         console.error(error);
         showError("Unable to get weather data");
@@ -47,8 +47,10 @@ async function getWeatherData(cityValue) {
 }
 // Clear all weather data display
 function showError(message) {
+    weatherDataEl.querySelector('.city-name').textContent ="";
     weatherDataEl.querySelector('.icon').innerHTML = "";
     weatherDataEl.querySelector('.temperature').textContent = "";
-    weatherDataEl.querySelector('.description').textContent = message;
     weatherDataEl.querySelector('.details').innerHTML = '';
+    cityInputEl.value = ""; // clear input field
+    weatherDataEl.querySelector('.description').textContent = message;
 }

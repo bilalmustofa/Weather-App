@@ -1,4 +1,4 @@
-const apiKey = "2752387c5699f17863099662d9532e44";
+const apiKey = APIKEY;
 const weatherDataEl = document.getElementById('weatherData');
 const cityInputEl = document.getElementById('cityInput');
 const formEl = document.querySelector('form');
@@ -21,7 +21,7 @@ async function getWeatherData(cityValue) {
         const data = await response.json();  
         
         if(Number(data.cod) !== 200) {
-            showError("City not found");
+            showError(`"${cityValue}" City not found`);
             return;
         }
         const temperature = Math.round(data.main.temp);

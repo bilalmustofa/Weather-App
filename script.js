@@ -1,4 +1,4 @@
-const apiKey = APIKEY;
+const apiKey = "324003b2131a71a262245f1b9979b8d5";
 const weatherDataEl = document.getElementById('weatherData');
 const cityInputEl = document.getElementById('cityInput');
 const formEl = document.querySelector('form');
@@ -34,7 +34,7 @@ async function getWeatherData(cityValue) {
             `Wind speed: ${data.wind.speed}m/s`
         ];
         // Display data
-        weatherDataEl.querySelector('.icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">`;
+        weatherDataEl.querySelector('.icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="Weather Icon">`;
         weatherDataEl.querySelector('.city-name').textContent = `${cityName}`;
         weatherDataEl.querySelector('.temperature').textContent = `${temperature}℃`;
         weatherDataEl.querySelector('.description').textContent = `${description}`;
